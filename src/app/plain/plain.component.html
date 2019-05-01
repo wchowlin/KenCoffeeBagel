@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Plain Bagel</h2>
+<hr>
+<mat-dialog-content class = "Schmear">
+    Please Choose Schmear:
+</mat-dialog-content>
+<mat-dialog-actions>
+  <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Honey Paste</mat-radio-button>
+      <br>
+      <mat-radio-button value="2">Peanut Butter</mat-radio-button>
+      <br>
+      <mat-radio-button value="3">Cream Cheese</mat-radio-button>
+      <br>
+      <mat-radio-button value="4">None</mat-radio-button>
+      <br>
+  </mat-radio-group>
+
+</mat-dialog-actions>
+<br>
+<br>
+<mat-dialog-content class = "qty">
+    Please Choose Quantity:
+</mat-dialog-content>
+<mat-form-field>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+<br>
+<button class = 'primary'(click)='sendConfirmation()'>Confirm</button>
+
+
